@@ -30,7 +30,7 @@ class Server {
     console.log(pref + white("Preview: ") + bold(white(`http://localhost:${port ? port : 80}`)));
   }
 
-  app = (req, res) => {
+  app(req, res) {
     const parsedUrl = url.parse(req.url, true);
     const { pathname } = parsedUrl;
     const method = req.method.toLowerCase();
