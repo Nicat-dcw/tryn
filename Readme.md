@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/tryn.svg)](https://www.npmjs.com/package/tryn)
-[![GitHub](https://img.shields.io/github/license/username/repo.svg)](https://github.com/Nicat-dcw/tryn)
+[![GitHub](https://img.shields.io/github/license/Nicat-dcw/tryn.svg)](https://github.com/Nicat-dcw/tryn)
 # 🚀 Tryn
 
 Tryn is a lightweight and flexible web server module for Node.js. It allows you to quickly build and handle HTTP servers with ease.
