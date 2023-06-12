@@ -18,7 +18,8 @@ Tryn is a lightweight and flexible web server module for Node.js. It allows you 
 You can install Tryn using npm:
 
 ```shell
-npm install tryn
+npm install tryn 
+yarn add tryn
 ```
 
 ## 🚀 Usage
