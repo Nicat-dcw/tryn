@@ -74,9 +74,11 @@ class Server {
   }
 
   onListening() {
-    const { port } = this.server.address();
-    console.log(yellow("[TRYN]") + blue(" Running on ") + green(port) + white(" port"));
+  const address = this.server.address();
+  const port = address ? address.port : 'unknown';
+  console.log(yellow("[TRYN]") + blue(" Running on ") + green(port) + white(" port"));
   }
+
 
   onClose() {
     console.log(yellow("[TRYN]") + blue(" Server closed."));
