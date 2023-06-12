@@ -30,7 +30,7 @@ class Server {
     console.log(pref + white("Preview: ") + bold(white(`http://localhost:${port ? port : 80}`)));
   }
 
-  app(req, res) {
+  app = (req, res) => {
     const parsedUrl = url.parse(req.url, true);
     const { pathname } = parsedUrl;
     const method = req.method.toLowerCase();
@@ -73,14 +73,13 @@ class Server {
     this.routes.push({ method: 'use', handler: middleware });
   }
 
-  onListening() {
+  onListening = () => {
   const address = this.server.address();
   const port = address ? address.port : 'unknown';
   console.log(yellow("[TRYN]") + blue(" Running on ") + green(port) + white(" port"));
   }
 
-
-  onClose() {
+  onClose = () => {
     console.log(yellow("[TRYN]") + blue(" Server closed."));
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "tryn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "✨ A lightweight and flexible Node.js web framework",
   "main": "./src/index.js",
   "module": "./src/index.js",
@@ -8,8 +8,7 @@
   "types": "./src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "prepublishOnly": "npm run build"
+    "build": "babel src --out-dir dist"
   },
   "exports": {
     "require": "./src/index.cjs",
