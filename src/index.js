@@ -10,7 +10,7 @@ class Prettier {
     return;
   }
   pretty(data) {
-    if (!data) throw new TypeError("[TRYN]", "You must validate json bodied data");
+    if (!data) throw new TypeError("[TRYN] You must validate json bodied data");
     return JSON.stringify(data, null, 2);
   }
 }
@@ -60,7 +60,7 @@ class Server {
       res.statusCode = 404;
       res.end('Not Found');
     }
-  };
+  }
 
   applyMiddleware(req, res) {
     for (const middleware of this.middleware) {
@@ -73,14 +73,14 @@ class Server {
     this.routes.push({ method: 'use', handler: middleware });
   }
 
-  onListening = () => {
+  onListening() {
     const { port } = this.server.address();
     console.log(yellow("[TRYN]") + blue(" Running on ") + green(port) + white(" port"));
-  };
+  }
 
-  onClose = () => {
+  onClose() {
     console.log(yellow("[TRYN]") + blue(" Server closed."));
-  };
+  }
 
   get(path, handler) {
     this.routes.push({ method: 'get', path, handler });
