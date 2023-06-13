@@ -9,7 +9,7 @@ const routes = [];
 
 class Server {
   constructor(options) {
-    const { port, prettier } = options;
+    const { port, prettier } = options || {};
     const pref = yellow("[TRYN] ");
     this.routes = routes;
     this.prettier = prettier;
@@ -43,6 +43,11 @@ class Server {
         } else {
           res.end(JSON.stringify(data));
         }
+      };
+      req.close = (data) => {
+        this.server.close(() => {
+            return;
+        })
       };
       res.write = (data) => {
         res.write(data);

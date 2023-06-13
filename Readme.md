@@ -4,6 +4,8 @@
 
 Tryn is a lightweight and flexible web server module for Node.js. It allows you to quickly build and handle HTTP servers with ease.
 
+## 👌 Updates 
+- Get Updates from [GitHub](https://github.com/Nicat-dcw/tryn/releases/tag/Updates)
 ## ✨ Features
 
 - 🌐 Handles HTTP requests and routes them to the corresponding handlers.
@@ -27,17 +29,16 @@ yarn add tryn
 Here's a basic example of how to use Tryn:
 
 ```javascript
-import { Server, Prettier } from 'tryn';
+import { Server, Prettier, Logger } from 'tryn';
 
 const server = new Server({ port: 8080, prettier: new Prettier() });
+
+server.use(new Logger().log) // if you want to use logger
 
 server.get('/', (req, res) => {
   res.json({ message: 'Hello, world!' });
 });
 
-server.listen(8080, () => {
-  console.log('Tryn server is running on port 8080');
-});
 ```
 
 You can define routes using the server's methods (`get`, `post`, `delete`, `patch`, `put`), and you can also add middleware functions to extend the server's functionality using the `use` method.
