@@ -2,18 +2,10 @@ import http from 'http';
 import url from 'url';
 import { blue, yellow, white, bold, green } from 'colorette';
 import util from 'util';
+import Prettier from './plugins/esm/prettier.js'
+import Logger from './plugins/esm/logger.js' 
 
 const routes = [];
-
-class Prettier {
-  constructor() {
-    return;
-  }
-  pretty(data) {
-    if (!data) throw new TypeError("[TRYN] You must validate json bodied data");
-    return JSON.stringify(data, null, 2);
-  }
-}
 
 class Server {
   constructor(options) {
@@ -108,4 +100,4 @@ class Server {
   }
 }
 
-export { Server, Prettier };
+export { Server, Prettier, Logger };

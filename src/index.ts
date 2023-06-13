@@ -2,6 +2,8 @@ import http from 'http';
 import url from 'url';
 import { blue, yellow, white, bold, green } from 'colorette';
 import util from 'util';
+import Prettier from './plugins/ts/prettier.ts'
+import Logger from './plugins/ts/logger.ts' 
 
 type RequestHandler = (req: http.IncomingMessage, res: http.ServerResponse) => void;
 
@@ -13,17 +15,6 @@ interface Route {
 
 interface Middleware {
   (req: http.IncomingMessage, res: http.ServerResponse, next: () => void): void;
-}
-
-class Prettier {
-  constructor() {
-    return;
-  }
-
-  pretty(data: any): string {
-    if (!data) throw new TypeError("[TRYN] You must validate json bodied data");
-    return JSON.stringify(data, null, 2);
-  }
 }
 
 class Server {
@@ -134,4 +125,4 @@ class Server {
   }
 }
 
-export { Server, Prettier };
+export { Server, Prettier, Logger };

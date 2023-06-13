@@ -1,8 +1,8 @@
-import { Server, Prettier } from '../src/index.js';
+import { Server, Prettier, Logger } from '../src/index.js';
 //import cors from 'cors' 
 
 const server = new Server({ port: 8080, prettier: new Prettier()});
-
+server.use(new Logger().log)
 //server.use(cors()) 
 server.get('/', (req, res) => {
   res.statusCode = 200;

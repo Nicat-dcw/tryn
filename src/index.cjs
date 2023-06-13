@@ -2,18 +2,10 @@ const http = require('http');
 const url = require('url');
 const { blue, yellow, white, bold, green } = require('colorette');
 const util = require('util');
+const Prettier = require("./plugins/cjs/prettier.cjs")
+const Logger = require("./plugins/cjs/logger.cjs")
 
 const routes = [];
-
-class Prettier {
-  constructor() {
-    return;
-  }
-  pretty(data) {
-    if (!data) throw new TypeError("[TRYN]", "You must validate json bodied data");
-    return JSON.stringify(data, null, 2);
-  }
-}
 
 class Server {
   constructor(options) {
@@ -107,5 +99,5 @@ class Server {
   }
 }
 
-module.exports = { Server, Prettier };
+module.exports = { Server, Prettier, Logger };
                       
