@@ -10,8 +10,10 @@ Tryn is a lightweight and flexible web server module for Node.js. It allows you 
 
 - 🌐 Handles HTTP requests and routes them to the corresponding handlers.
 - 📡 Supports GET, POST, DELETE, PATCH, and PUT methods.
+- 🌿 Template Engine Support `EJS`.
 - 🚦 Middleware support for extending the server's functionality.
 - 💅 Response formatting using the `Prettier` class.
+- 🎚️ Rate Limiting for Request from IP addres.
 - 🧩 Easy-to-use API for defining routes and handling requests.
 - ⚡ Graceful server shutdown with the `close` method.
 
@@ -39,6 +41,17 @@ server.get('/', (req, res) => {
   res.json({ message: 'Hello, world!' });
 });
 
+```
+
+Here's template engine using in tryn
+
+```javascript
+server.engine("view", "ejs") 
+
+server.get("/", (req,res) => {
+    //res.json({ status: 200 })
+    res.server.render("/path/to/ejs/file")
+})
 ```
 
 You can define routes using the server's methods (`get`, `post`, `delete`, `patch`, `put`), and you can also add middleware functions to extend the server's functionality using the `use` method.
